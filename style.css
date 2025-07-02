@@ -1,0 +1,180 @@
+/* === GLOBAL CSS VARIABLES (CUSTOM PROPERTIES) === */
+:root {
+    /* Default text color (black). It is custom property*/
+    --primary-color: #000;
+    /* Default background color (white) */
+    --secondary-color: #fff;
+}
+
+/* Smooth transition effect when switching themes */
+html {
+    transition: all 0.5s ease-in;
+}
+
+/* === DARK THEME STYLES === */
+html.dark {
+    /* In dark mode, text becomes white */
+    --primary-color: #fff;
+    /* Background becomes dark gray */
+    --secondary-color: #333;
+}
+
+html.dark {
+    /* Set overall background for dark mode */
+    background-color: #111;
+    /* Use variable for text color.This is how I used custom property */
+    color: var(--primary-color);
+}
+
+/* === BODY STYLES === */
+body {
+    /* Set a modern sans-serif font */
+    font-family: 'Heebo', sans-serif;
+    /* Center content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Full viewport height */
+    height: 100vh;
+    /* Hide scrollbars */
+    overflow: hidden;
+    /* Remove default margin */
+    margin: 0;
+}
+
+/* === TOGGLE BUTTON STYLES === */
+.toggle {
+    /* Change cursor to pointer on hover */
+    cursor: pointer;
+    /* Use primary color for background */
+    background-color: var(--primary-color);
+    /* Use secondary color for text */
+    color: var(--secondary-color);
+    /* Remove default border */
+    border: 0;
+    /* Slight rounding on corners */
+    border-radius: 4px;
+    /* Inner spacing */
+    padding: 8px 12px;
+    /*Position will be next to ancestor and use top, bottom, right and left css property*/
+    position: absolute;
+    /* Position from the top */
+    top: 100px;
+}
+
+.toggle:focus {
+    /* Remove outline when focused */
+    outline: none;
+}
+
+/* === CLOCK CONTAINER === */
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* === CLOCK FACE STYLING === */
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+/* === NEEDLES (HOUR, MINUTE, SECOND) === */
+.needle {
+    /* Use primary color for needles */
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    /* Rotate from base of needle */
+    transform-origin: bottom center;
+    /* Smooth transition on rotation */
+    transition: all 0.5s ease-in linear;
+}
+
+/* Hour needle */
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+/* Minute needle - longer than hour needle */
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+}
+
+/* Second needle - red and same size as minute */
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    /* Red color for second hand */
+    background-color: #e74c3c;
+}
+
+/* === CLOCK CENTER POINT  === */
+.center-point {
+    /* Red dot at center */
+    background-color: #e74c3c;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Make it circular */
+    border-radius: 50%;
+}
+
+/* Inner white dot inside center point, I use after center-point class so content is empty. */
+.center-point::after {
+    content: '';
+    /* Inner circle uses primary color */
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+/* === DIGITAL TIME DISPLAY === */
+.time {
+    /* Large digital clock font */
+    font-size: 60px;
+}
+
+/* === DATE DISPLAY === */
+.date {
+    /* Light gray text for date */
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    /* All uppercase for date */
+    text-transform: uppercase;
+}
+
+/* Circle style used around today's date */
+.date .circle {
+    /* Circle background using variable */
+    background-color: var(--primary-color);
+    /* Circle text using variable */
+    color: var(--secondary-color);
+    /* Perfect circle */
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    /* Smooth visual transitions */
+    transition: all 0.5s ease-in;
+    font-size: 12px;
+}

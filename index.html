@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding -->
+    <meta charset="UTF-8" />
+
+    <!-- Make sure the page is responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Page title shown in the browser tab -->
+    <title>Theme Clock</title>
+</head>
+
+<body>
+    <!-- 
+        This project is inspired by a design from Dribbble: 
+        https://dribbble.com/shots/5958443-Alarm-clock 
+    -->
+
+    <!-- Button to switch between dark and light mode -->
+    <button class="toggle">Dark mode</button>
+
+    <!-- 
+        Main container for the clock and date/time.
+        It includes the analog clock and digital displays.
+    -->
+    <div class="clock-container">
+
+        <!-- Analog clock face -->
+        <div class="clock">
+
+            <!-- Clock hour hand -->
+            <div class="needle hour"></div>
+
+            <!-- Clock minute hand -->
+            <div class="needle minute"></div>
+
+            <!-- Clock second hand -->
+            <div class="needle second"></div>
+
+            <!-- Small dot in the center of the clock -->
+            <div class="center-point"></div>
+        </div>
+
+        <!-- Digital time display (e.g., 3:45 PM) -->
+        <div class="time"></div>
+
+        <!-- Date display (e.g., Tuesday, Jul 2) -->
+        <div class="date"></div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
